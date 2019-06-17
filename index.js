@@ -1,16 +1,22 @@
-var Name = $('.card-container');
-var Favorite-chocolate = $('.card-container');
-var Tempature = $('.card-container');
-var submit = $('.submit-btn');
+var cardContainer = $('.card-container');
+var btn = $('.submit-btn');
 
 
-submit.on("click");
+btn.on("click", chocolate);
+
+localStorage.setItem('items', JSON.stringify(cardContainer))
 
 function chocolate() {
   var name = $('.name').val();
-  var Favorite-chocolate = $('.Favorite-chocolate').val();
-    var Tempature = $('.Tempature').val();
+  var favorite = $('.favorite').val();
+  var temp = $('.temp').val();
+
+cardContainer.append(`
+<p class="name-card"> My name is ${name}, my favorite chocolate is ${favorite} and I like it to be ${temp} tempature! </p>
+`);
 
   $('.name').val("");
+  $('.favorite').val("");
+  $('.temp').val("");
 
 }
